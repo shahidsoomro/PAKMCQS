@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | PAKSTUDY.XYZ Quiz System</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header (Same as homepage) -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="PAKSTUDY.XYZ Logo" width="180" height="60">
+                    <span class="tagline">A One Stop Shop for Pakistan Studies</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html" class="active">Sign Up</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Signup Content -->
+    <main class="auth-container">
+        <div class="auth-card">
+            <h1 class="auth-title">Create Your Account</h1>
+            <p class="auth-subtitle">Join thousands of students mastering Pakistan Studies</p>
+            
+            <form id="signupForm" class="auth-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="firstName" placeholder="John" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" placeholder="Doe" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" placeholder="student@example.com" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                        <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                    </div>
+                    <div class="password-strength">
+                        <span class="strength-bar"></span>
+                        <span class="strength-bar"></span>
+                        <span class="strength-bar"></span>
+                        <span class="strength-text">Password strength</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirmPassword" placeholder="••••••••" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="educationLevel">Education Level</label>
+                    <select id="educationLevel" required>
+                        <option value="">Select your level</option>
+                        <option value="school">School Student</option>
+                        <option value="college">College Student</option>
+                        <option value="university">University Student</option>
+                        <option value="css">CSS Aspirant</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group terms">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <label for="agreeTerms">I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a></label>
+                </div>
+                
+                <button type="submit" class="btn-primary btn-block">Create Account</button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Log in here</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Same as homepage) -->
+    <footer class="main-footer">
+        <!-- Footer content from homepage -->
+    </footer>
+
+    <script src="assets/js/auth.js"></script>
+    <script>
+        // Password strength indicator
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            const strengthBars = document.querySelectorAll('.strength-bar');
+            const strengthText = document.querySelector('.strength-text');
+            
+            // Reset all bars
+            strengthBars.forEach(bar => bar.style.backgroundColor = '#e0e0e0');
+            
+            // Very weak (1 bar)
+            if (password.length > 0) {
+                strengthBars[0].style.backgroundColor = '#ff5252';
+                strengthText.textContent = 'Very weak';
+            }
+            
+            // Weak (2 bars)
+            if (password.length >= 6) {
+                strengthBars[1].style.backgroundColor = '#ffab40';
+                strengthText.textContent = 'Weak';
+            }
+            
+            // Medium (3 bars)
+            if (password.length >= 8 && /[A-Z]/.test(password) && /[0-9]/.test(password)) {
+                strengthBars[0].style.backgroundColor = '#ffab40';
+                strengthBars[1].style.backgroundColor = '#ffab40';
+                strengthBars[2].style.backgroundColor = '#ffab40';
+                strengthText.textContent = 'Medium';
+            }
+            
+            // Strong (4 bars)
+            if (password.length >= 10 && /[A-Z]/.test(password) && /[0-9]/.test(password) && /[^A-Za-z0-9]/.test(password)) {
+                strengthBars[0].style.backgroundColor = '#4caf50';
+                strengthBars[1].style.backgroundColor = '#4caf50';
+                strengthBars[2].style.backgroundColor = '#4caf50';
+                strengthText.textContent = 'Strong';
+            }
+        });
+
+        // Toggle password visibility (same as login page)
+    </script>
+</body>
+</html>

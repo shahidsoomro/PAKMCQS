@@ -1,0 +1,40 @@
+pakstudy.xyz
+│
+├── index.html                # Homepage
+├── login.html                # Student & Admin Login
+├── signup.html               # Student Registration
+├── dashboard.html            # Student Dashboard
+├── admin                    # Admin Panel
+│   ├── dashboard.html        # Admin Dashboard
+│   ├── question-bank.html    # Manage Questions
+│   └── users.html            # User Management
+│
+├── quizzes                  # All Quiz Subjects
+│   ├── history.html          # Pakistan History Quiz
+│   ├── foreign-policy.html   # Foreign Policy Quiz
+│   ├── economy.html          # Economy Quiz
+│   └── ideology.html         # Ideology Quiz
+│
+├── results.html              # Quiz Results
+├── categories.html           # Browse Categories
+├── about.html                # About Us (EEAT)
+├── contact.html              # Contact Page
+│
+├── assets
+│   ├── css
+│   │   ├── style.css         # Global Styles
+│   │   ├── quiz.css          # Quiz-Specific Styles
+│   │   └── admin.css         # Admin Panel Styles
+│   │
+│   ├── js
+│   │   ├── main.js           # Core Functions
+│   │   ├── quiz.js           # Quiz Logic
+│   │   ├── auth.js           # LoginSignup
+│   │   └── admin.js          # Admin Functions
+│   │
+│   ├── images               # Logos, Icons, Banners
+│   └── data
+│       ├── questions.json    # All MCQs
+│       └── users.json        # User Data
+│
+└── README.md                 # Deployment Guide

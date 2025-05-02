@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Management | PAKSTUDY.XYZ Admin</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="admin-profile">
+                    <img src="../assets/images/admin-avatar.png" alt="Admin Avatar" width="60" height="60">
+                    <div class="admin-info">
+                        <h3>Admin Panel</h3>
+                        <span>PAKSTUDY.XYZ</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="question-bank.html"><i class="fas fa-question-circle"></i> Question Bank</a></li>
+                    <li class="active"><a href="categories.html"><i class="fas fa-tags"></i> Categories</a></li>
+                    <li><a href="users.html"><i class="fas fa-users"></i> User Management</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-content">
+            <header class="content-header">
+                <h1>Category Management</h1>
+                <button class="btn-primary" id="btnAddCategory">
+                    <i class="fas fa-plus"></i> Add New Category
+                </button>
+            </header>
+
+            <!-- Categories Grid -->
+            <div class="categories-grid">
+                <!-- Category cards will be loaded here by JavaScript -->
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3>Pakistan History</h3>
+                        <span class="questions-count">245 Questions</span>
+                    </div>
+                    <div class="category-body">
+                        <p>Covering all historical events from ancient civilizations to modern Pakistan</p>
+                        <div class="category-levels">
+                            <span class="level-badge">Primary</span>
+                            <span class="level-badge">Secondary</span>
+                            <span class="level-badge">CSS/PMS</span>
+                        </div>
+                    </div>
+                    <div class="category-actions">
+                        <button class="btn-edit"><i class="fas fa-edit"></i> Edit</button>
+                        <button class="btn-delete"><i class="fas fa-trash"></i> Delete</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add/Edit Category Modal -->
+    <div class="modal" id="categoryModal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Add New Category</h3>
+            <form id="categoryForm">
+                <div class="form-group">
+                    <label for="categoryName">Category Name</label>
+                    <input type="text" id="categoryName" required>
+                </div>
+                <div class="form-group">
+                    <label for="categoryDescription">Description</label>
+                    <textarea id="categoryDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Education Levels</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="levels" value="primary"> Primary</label>
+                        <label><input type="checkbox" name="levels" value="secondary"> Secondary</label>
+                        <label><input type="checkbox" name="levels" value="college"> College</label>
+                        <label><input type="checkbox" name="levels" value="css"> CSS/PMS</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="categoryIcon">Icon Class (Font Awesome)</label>
+                    <input type="text" id="categoryIcon" placeholder="fas fa-landmark">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">Save Category</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <h3>Confirm Deletion</h3>
+            <p>Are you sure you want to delete this category? All questions in this category will be moved to 'Uncategorized'.</p>
+            <div class="modal-actions">
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-confirm-delete">Delete Category</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/admin-categories.js"></script>
+</body>
+</html>
