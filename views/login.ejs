@@ -1,0 +1,8 @@
+<%- include('partials/header', { title: 'Login | PAKMCQS' }) %>
+<h1>Login</h1>
+<form method="post" action="/login">
+    <label>Email: <input type="email" name="email" required></label><br>
+    <label>Password: <input type="password" name="password" required></label><br>
+    <button type="submit">Login</button>
+</form>
+<%- include('partials/footer') %>
