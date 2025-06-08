@@ -1,6 +1,7 @@
-# PAKMCQS Node.js Website
+# PAKMCQS Next.js Website
 
-This project is a simple Node.js site built with [Express](https://expressjs.com/) and [EJS](https://ejs.co/) templates.
+This project is a simple MCQS exam site built with [Next.js](https://nextjs.org/).
+It includes basic pages for login, signup, categories and more.
 
 ## Development
 
@@ -8,10 +9,10 @@ This project is a simple Node.js site built with [Express](https://expressjs.com
    ```bash
    npm install
    ```
-2. Start the server:
+2. Start the dev server:
    ```bash
-   npm start
+   npm run dev
    ```
-3. Visit `http://localhost:3000` in your browser.
+3. Open `http://localhost:3000` in your browser.
 
-The site contains basic pages for login, signup, categories, and more. Static assets are served from the `public/` directory.
+Static assets can be placed in the `public/` directory and global styles live in `styles/globals.css`.
